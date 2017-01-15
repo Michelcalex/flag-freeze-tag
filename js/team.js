@@ -1,3 +1,14 @@
-// console.log('team is here');
+console.log('team is here');
 
-// module.exports = console.log;
+function Team(teamname) {
+    this.add = function() {
+        console.log('adding a team');
+    }, 
+    this.won = function() {
+        console.log('we won, we won');
+    }
+} 
+
+module.exports = {
+    Team: Team,
+}
