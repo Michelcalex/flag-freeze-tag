@@ -2,10 +2,10 @@
 let player = require('./player'); 
 let team = require('./team'); 
 
-function game1() {
-    let a = new player.Player('Todd');
-    let b = new player.Player('Barb');
-    let c = new player.Player('Fitz');
+function game2() {
+    let a = new player.Player('Parker');
+    let b = new player.Player('Christian');
+    let c = new player.Player('Boone');
 
 
     let s = new team.Team('runners');
@@ -18,21 +18,19 @@ function game1() {
     s.won(); // false
     t.won(s); // false
 
+    c.tag(b);
+    s.won(); 
+    t.won(s);
+    b.frozen(); 
+    s.won(); 
+    t.won(s);
     c.tag(a);
-    s.won(); 
-    t.won(s);
-    a.frozen(); 
-    s.won(); 
-    t.won(s);
-    b.tag(a);
-    s.won(); 
-    t.won(s);
-    a.captureFlag();
+    a.frozen();
     console.log(s.won()); 
     console.log(t.won(s));
 
 }
 
 module.exports = {
-    game1: game1, 
+    game2: game2, 
 };

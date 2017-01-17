@@ -7,15 +7,13 @@ function Player(name) {  //Constructor - player is being constructed.
     this.isFrozen = false;
     this.hasFlag = false;
     
-    /*
-    Example (let a = new Player('Todd')): 
-        {
-            name: 'Todd',
-            playersTeam: this.playersTeam,
-            isFrozen = false,
-            hasFlag = false,
-        }
-    */
+    /*Example (let a = new Player('Todd')): 
+    {
+        name: 'Todd',
+        playersTeam: this.playersTeam,
+        isFrozen = false,
+        hasFlag = false,
+    }*/
 
     this.setTeam = function(teamparam) {
         this.playersTeam = teamparam;
