@@ -1,31 +1,44 @@
-console.log('player is here');
+console.log('players are here');
 
 
-function Player(name) {
-    this.name = name;
-    this.tag = function() {
-        console.log('tag you are it');
+function Player(name) {  //Constructor - player is being constructed. 
+    this.name = 'name';  //this refers to the player - the object that the function was called on. 
+    this.playersTeam;
+    this.isFrozen = false;
+    this.hasFlag = false;
+    
+    /*
+    Example (let a = new Player('Todd')): 
+        {
+            name: 'Todd',
+            playersTeam: this.playersTeam,
+            isFrozen = false,
+            hasFlag = false,
+        }
+    */
+
+    this.setTeam = function(teamparam) {
+        this.playersTeam = teamparam;
+    },
+    this.tag = function(playertag) {
+        playertag.isFrozen === false;
     },
     this.frozen = function() {
-        console.log('you are frozen');
+        return this.isFrozen;
+    },
+    this.captureFlag = function() {
+        if (this.isFrozen === false) {
+            this.hasFlag = true;
+        }
     },
     this.getFlag = function() {
-        console.log('flags, flags, flags');
+        return this.hasFlag;
     }
 
     return this;
 }
 
 
-let playerdudes = [
-    new Player('Parker'),
-    new Player('Christian'),
-    new Player('Lex'),
-]
-
-
-
 module.exports = {
     Player: Player,
-    playerdudes: playerdudes
 };
